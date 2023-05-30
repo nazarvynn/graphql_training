@@ -2,7 +2,7 @@
   "name": "apollo-server",
   "version": "1.0.0",
   "scripts": {
-    "start": "npx ts-node src/index.ts"
+    "start:local": "npx ts-node src/index.ts"
   },
   "dependencies": {
     "@apollo/datasource-rest": "^6.0.0",
