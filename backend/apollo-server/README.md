@@ -21,3 +21,6 @@ Resolvers re using REST API pointed to ([jsonplaceholder](https://jsonplaceholde
 ## Commands
 
 - `$ yarn start:local` - Up & running Apollo Server
+
+## GraphQL Playground
+http://localhost:3001/

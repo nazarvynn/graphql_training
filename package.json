@@ -1,6 +1,7 @@
 {
   "name": "graphql_training",
-  "version": "1.0.0",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
   "devDependencies": {
     "prettier": "^2.8.8"
   }

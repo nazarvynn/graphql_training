@@ -1,6 +1,7 @@
 {
   "name": "nest-js",
   "version": "0.0.1",
+  "license": "UNLICENSED",
   "scripts": {
     "build": "nest build",
     "start": "nest start",

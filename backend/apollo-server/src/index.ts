@@ -21,6 +21,7 @@ const server = new ApolloServer<SchemaContext>({
 });
 
 const standaloneServer = startStandaloneServer(server, {
+  listen: { port: 3001 },
   context: async () => ({
     dataSources: {
       postsAPI: new PostsAPI(),

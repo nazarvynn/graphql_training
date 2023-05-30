@@ -44,3 +44,8 @@ $ brew services stop postgresql@14
 - `$ yarn start:prod` - Start in production mode
 - `$ yarn lint` - Linting TS files
 - `$ yarn format` - Formatting TS files
+
+
+## GraphQL Playground
+
+http://localhost:3001/graphql
