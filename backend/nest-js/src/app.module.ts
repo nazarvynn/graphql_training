@@ -28,6 +28,9 @@ import { UsersModule } from 'src/users/users.module';
       autoSchemaFile: 'schema.graphql',
       sortSchema: true,
       driver: ApolloDriver,
+      subscriptions: {
+        'graphql-ws': true,
+      },
     }),
     UsersModule,
   ],
