@@ -2,19 +2,19 @@ import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateCol
 import { ObjectType, Field, ID } from '@nestjs/graphql';
 
 @ObjectType()
-@Entity('users')
-export class User {
+@Entity('posts')
+export class Post {
   @Field(() => ID)
   @PrimaryGeneratedColumn()
   id: number;
 
   @Field()
   @Column()
-  email: string;
+  title: string;
 
   @Field({ nullable: true })
   @Column({ nullable: true })
-  name: string;
+  body: string;
 
   @Field()
   @CreateDateColumn()

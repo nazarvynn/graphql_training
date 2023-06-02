@@ -3,7 +3,8 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsersModule } from 'src/users/users.module';
+import { CommentsModule } from './comments/comments.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
@@ -32,7 +33,8 @@ import { UsersModule } from 'src/users/users.module';
         'graphql-ws': true,
       },
     }),
-    UsersModule,
+    CommentsModule,
+    PostsModule,
   ],
   controllers: [],
   providers: [],

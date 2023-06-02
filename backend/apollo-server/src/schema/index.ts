@@ -9,8 +9,8 @@ export default `#graphql
     id: ID!
     title: String
     body: String
-    author: Author
     comments: [Comment]
+    author: Author
   }
 
   type PostConnection {
@@ -26,6 +26,7 @@ export default `#graphql
 
   type Comment {
     id: ID!
+    postId: ID!
     name: String
     email: String
     body: String
@@ -54,7 +55,7 @@ export default `#graphql
 
   type Query {
     posts: [Post]
-    postById(id: ID!): Post
+    post(id: ID!): Post
     postsPaginated(page: Int = 1, pageSize: Int = 5): PostConnection!
     comments: [Comment]
     authors: [Author]

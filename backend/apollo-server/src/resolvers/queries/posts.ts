@@ -5,7 +5,7 @@ const posts = (post, args, { dataSources }, info) => {
   return dataSources.postsAPI.getPosts();
 };
 
-const postById = (post, args, { dataSources }, info) => {
+const post = (post, args, { dataSources }, info) => {
   return dataSources.postsAPI.getPostById(args.id);
 };
 
@@ -27,4 +27,4 @@ const postsPaginated = (parent, { page, pageSize }, context) => {
   });
 };
 
-export { posts, postById, postAuthor, postComments, postsPaginated };
+export { posts, post, postAuthor, postComments, postsPaginated };

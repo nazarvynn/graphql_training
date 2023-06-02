@@ -4,7 +4,7 @@ import {
   posts,
   postsPaginated,
   postComments,
-  postById,
+  post,
   postAuthor,
   authors,
   authorAddress,
@@ -15,7 +15,7 @@ import {
 export default {
   Query: {
     posts,
-    postById,
+    post,
     postsPaginated,
     comments,
     authors,
