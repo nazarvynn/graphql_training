@@ -13,6 +13,10 @@ export class CommentsService {
     return this.commentRepository.find();
   }
 
+  async findAllByPostId(postId): Promise<Comment[]> {
+    return this.commentRepository.find({ where: { postId } });
+  }
+
   async findOne(id): Promise<Comment> {
     return this.commentRepository.findOneOrFail(id);
   }

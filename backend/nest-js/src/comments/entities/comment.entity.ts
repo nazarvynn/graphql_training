@@ -9,6 +9,7 @@ export class Comment {
   id: number;
 
   @Field(() => ID)
+  @Column()
   postId: number;
 
   @Field()
