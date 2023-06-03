@@ -21,7 +21,10 @@ const server = new ApolloServer<SchemaContext>({
 });
 
 const standaloneServer = startStandaloneServer(server, {
-  listen: { port: 3001 },
+  listen: {
+    port: 3001,
+    path: '/graphql',
+  },
   context: async () => ({
     dataSources: {
       postsAPI: new PostsAPI(),

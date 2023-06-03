@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   imports: [
@@ -42,6 +43,7 @@ import { AboutComponent } from './about/about.component';
     InputTextareaModule,
     DialogModule,
     DynamicDialogModule,
+    GraphQLModule,
   ],
   declarations: [AppComponent, WelcomeComponent, AboutComponent],
   providers: [],
