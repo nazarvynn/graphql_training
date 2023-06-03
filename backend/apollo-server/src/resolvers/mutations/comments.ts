@@ -1,9 +1,11 @@
-const createComment = (comment, { postId, input }, { dataSources }, info) => {
-  return dataSources.commentsAPI.createComment(postId, input);
+const createComment = (comment, { postId, createCommentInput }, { dataSources }, info) => {
+  return dataSources.commentsAPI.createComment(postId, createCommentInput);
 };
-const updateComment = (comment, { id, input }, { dataSources }, info) => {
-  return dataSources.commentsAPI.updateComment(id, input);
+
+const updateComment = (comment, { id, updateCommentInput }, { dataSources }, info) => {
+  return dataSources.commentsAPI.updateComment(id, updateCommentInput);
 };
+
 const deleteComment = (comment, { id }, { dataSources }, info) => {
   return dataSources.commentsAPI.deleteComment(id);
 };

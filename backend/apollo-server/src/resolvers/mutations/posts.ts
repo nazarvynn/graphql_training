@@ -1,9 +1,11 @@
-const createPost = (post, { input }, { dataSources }, info) => {
-  return dataSources.postsAPI.createPost(input);
+const createPost = (post, { createPostInput }, { dataSources }, info) => {
+  return dataSources.postsAPI.createPost(createPostInput);
 };
-const updatePost = (post, { id, input }, { dataSources }, info) => {
-  return dataSources.postsAPI.updatePost(id, input);
+
+const updatePost = (post, { id, updatePostInput }, { dataSources }, info) => {
+  return dataSources.postsAPI.updatePost(id, updatePostInput);
 };
+
 const deletePost = (post, { id }, { dataSources }, info) => {
   return dataSources.postsAPI.deletePost(id);
 };

@@ -21,8 +21,8 @@ export class CommentsService {
     return this.commentRepository.findOneOrFail(id);
   }
 
-  async create(createCommentInput: CreateCommentInput): Promise<Comment> {
-    return this.commentRepository.save(createCommentInput);
+  async create(postId, createCommentInput: CreateCommentInput): Promise<Comment> {
+    return this.commentRepository.save({ postId, ...createCommentInput });
   }
 
   async update(id, updateCommentInput: UpdateCommentInput): Promise<Comment> {

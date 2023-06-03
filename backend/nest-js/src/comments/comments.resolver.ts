@@ -1,4 +1,4 @@
-import { Resolver, Query, Mutation, Args, Int } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Args, Int, ID } from '@nestjs/graphql';
 
 import { Comment } from './entities';
 import { CreateCommentInput, UpdateCommentInput } from './dto';
@@ -19,8 +19,11 @@ export class CommentsResolver {
   }
 
   @Mutation(() => Comment)
-  createComment(@Args('createCommentInput') createCommentInput: CreateCommentInput): Promise<Comment> {
-    return this.commentsService.create(createCommentInput);
+  createComment(
+    @Args('postId', { type: () => ID! }) postId: number,
+    @Args('createCommentInput') createCommentInput: CreateCommentInput
+  ): Promise<Comment> {
+    return this.commentsService.create(postId, createCommentInput);
   }
 
   @Mutation(() => Comment)

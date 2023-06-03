@@ -63,11 +63,11 @@ export default `#graphql
   }
 
   type Mutation {
-    createPost(input: CreatePostInput!): Post
-    updatePost(id: ID!, input: UpdatePostInput!): Post
+    createPost(createPostInput: CreatePostInput!): Post
+    updatePost(id: ID!, updatePostInput: UpdatePostInput!): Post
     deletePost(id: ID!): Boolean
-    createComment(postId: ID!, input: CreateCommentInput!): Comment
-    updateComment(id: ID!, input: UpdateCommentInput!): Comment
+    createComment(postId: ID!, createCommentInput: CreateCommentInput!): Comment
+    updateComment(id: ID!, updateCommentInput: UpdateCommentInput!): Comment
     deleteComment(id: ID!): Boolean
   }
 
