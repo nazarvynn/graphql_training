@@ -72,7 +72,7 @@ export default `#graphql
   }
 
   type Subscription {
-    postDeleted: Post
+    postDeleted: Post!
   }
 
   input CreatePostInput {

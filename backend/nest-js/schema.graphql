@@ -65,6 +65,10 @@ type Query {
   postsPaginated(page: Int! = 1, pageSize: Int! = 5): PostConnection!
 }
 
+type Subscription {
+  postDeleted: Post!
+}
+
 input UpdateCommentInput {
   body: String
   email: String

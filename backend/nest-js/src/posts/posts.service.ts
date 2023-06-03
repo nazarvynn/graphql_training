@@ -1,13 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { PubSub } from 'graphql-subscriptions';
 
 import { CreatePostInput, UpdatePostInput } from './dto';
 import { Post, PostConnection } from './entities';
+import { CommentsService } from 'src/comments/comments.service';
+
+const pubSub = new PubSub();
 
 @Injectable()
 export class PostsService {
-  constructor(@InjectRepository(Post) private postRepository: Repository<Post>) {}
+  constructor(
+    @InjectRepository(Post) private postRepository: Repository<Post>,
+    private readonly commentsService: CommentsService
+  ) {}
 
   async findAll(): Promise<Post[]> {
     return this.postRepository.find();
@@ -37,6 +44,9 @@ export class PostsService {
 
   async remove(id): Promise<Post> {
     const post = await this.postRepository.findOne(id);
+    await pubSub.publish('postDeleted', { postDeleted: post });
+    await this.commentsService.removeAllByPostId(id);
+
     return this.postRepository.remove(post);
   }
 }

@@ -34,4 +34,9 @@ export class CommentsService {
     const comment = await this.commentRepository.findOne(id);
     return this.commentRepository.remove(comment);
   }
+
+  async removeAllByPostId(postId): Promise<Comment[]> {
+    const comments = await this.findAllByPostId(postId);
+    return this.commentRepository.remove(comments);
+  }
 }

@@ -1,4 +1,7 @@
-import { Resolver, Query, Mutation, Args, Int, ResolveField, Parent } from '@nestjs/graphql';
+import { Resolver, Query, Mutation, Subscription, Args, Int, ResolveField, Parent } from '@nestjs/graphql';
+import { PubSub } from 'graphql-subscriptions';
+
+const pubSub = new PubSub();
 
 import { Post, PostConnection } from './entities';
 import { CreatePostInput, UpdatePostInput } from './dto';
@@ -47,5 +50,10 @@ export class PostsResolver {
   @Mutation(() => Post)
   removePost(@Args('id', { type: () => Int }) id: number): Promise<Post> {
     return this.postsService.remove(id);
+  }
+
+  @Subscription(() => Post)
+  postDeleted() {
+    return pubSub.asyncIterator('postDeleted');
   }
 }
