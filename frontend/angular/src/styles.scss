@@ -41,3 +41,38 @@ a {
     color: var(--primary-color);
   }
 }
+
+.page {
+  .title {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .wrapper {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  .empty-page {
+    font-size: 16px;
+    color: #ccc;
+    height: calc(100vh - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .link {
+    text-decoration: underline;
+    cursor: pointer;
+
+    :hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 20px;
+    font-size: 16px;
+  }
+}

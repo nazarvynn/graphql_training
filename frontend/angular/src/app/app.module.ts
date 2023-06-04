@@ -22,6 +22,8 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AboutComponent } from './about/about.component';
 import { GraphQLModule } from './graphql.module';
+import { PostsComponent } from 'src/app/posts/posts.component';
+import { HeaderComponent } from 'src/app/@shared/components';
 
 @NgModule({
   imports: [
@@ -45,7 +47,7 @@ import { GraphQLModule } from './graphql.module';
     DynamicDialogModule,
     GraphQLModule,
   ],
-  declarations: [AppComponent, WelcomeComponent, AboutComponent],
+  declarations: [AppComponent, HeaderComponent, WelcomeComponent, AboutComponent, PostsComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

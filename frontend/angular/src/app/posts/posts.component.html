@@ -1,0 +1,44 @@
+<div class="page">
+  <h1 class="title">Posts</h1>
+  <div class="wrapper">
+    <div class="post-creation">
+      <p-button label="Add Post" icon="pi pi-plus" (onClick)="showCreateModal()"></p-button>
+    </div>
+    <div class="posts-wrap">
+      <div *ngIf="posts?.length" class="posts-cnt">
+        <ng-container *ngFor="let post of posts">
+          <p-card [header]="post.title">
+            <div class="post-body">
+              <span>{{ post.body }}</span>
+              <span class="link ml-2" (click)="showDetails(post)">Show details</span>
+            </div>
+            <br />
+            <div class="post-actions flex">
+              <p-button
+                label="Edit"
+                icon="pi pi-pencil"
+                class="ml-auto"
+                styleClass="p-button-sm"
+                (onClick)="showEditModal(post)"
+              ></p-button>
+              <p-button
+                label="Delete"
+                icon="pi pi-save"
+                class="ml-2"
+                styleClass="p-button-sm p-button-danger"
+                (onClick)="deletePost(post)"
+              ></p-button>
+            </div>
+          </p-card>
+          <br />
+        </ng-container>
+      </div>
+
+      <div *ngIf="!posts?.length" class="empty-page">There are no posts in the page.</div>
+
+      <div *ngIf="posts?.length" class="pagination">
+        <p-paginator [rows]="12" [totalRecords]="120" (onPageChange)="onPageChange($event)"></p-paginator>
+      </div>
+    </div>
+  </div>
+</div>
